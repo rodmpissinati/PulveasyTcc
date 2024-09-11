@@ -1,0 +1,581 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Login + Cadastro + Cadastro Propriedade */
+
+body{
+    width: 100%;
+    height:100%;
+    font-family: sans-serif;
+    
+}
+ /* formulários */
+.background{
+    position: fixed;
+    background-image: /*linear-gradient(135deg, rgba(0, 0, 0, 0.521), rgb(0, 0, 0)),*/ url("imagens/imagemLogin.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 70vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(1, 12);
+    grid-template-rows: repeat(2, 4fr);
+    height: 100vh;
+    width: 100vw;
+
+
+}
+
+.form{
+    /* background: rgba(0, 0, 0, 0.945);  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  */
+    background-color: #fafafa;
+    grid-column: 11/ 12;
+    grid-row: 1 / 5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    border: solid black 0px;
+    padding: 8em; /*para alterar a largura do background do form*/
+
+      
+}
+
+#user, #password, #cpf, #email, #cidade, #bairro, #rua, #numero, #cnpj, #nomeP{
+    padding: 0.7em 1em;
+    padding-right: 9em;
+    border: 0px solid gray;
+    border-radius: 0.8em;
+    margin-top: 0.2em;
+    border: solid black 1px;
+}
+
+
+.form_container input{
+    width: 100%;
+    padding: 10em;
+    font-size: 16px;
+
+}
+
+#btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.7em;
+    
+}
+
+#btn_form {
+    padding: 0.5em 10em; /*deixar 9 ou 10 */
+    border: 0.5px solid black;
+    border-radius: 1em;
+    background-color: green;
+    font-size: 1em;
+    color: white;
+    font-weight: 700;
+}
+
+ .form_container input::placeholder { /*Para mudar dentro da caixa de texto */
+    color: gray; 
+    text-align: left; 
+  }
+#txt_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#txt_senha{
+    margin-top: 0.3em;
+}
+
+#txt_esqueci{
+    color: blue;
+    display: flex;
+    justify-content: end;
+    margin-right: 0.5em;
+    margin-top: 0.4em;
+    text-decoration: underline;
+} 
+
+#txt_cadastrar{
+    display: flex;
+    padding-top: 0.5em;
+    margin: 0 0.5em;
+}
+
+#link_cadastrar{
+    margin-left: 0.3em;
+    color: blue;
+    text-decoration: underline;
+    
+}
+
+input:focus{
+
+}
+
+.txt_cadastro{
+    margin-top: 1em;
+
+}
+
+.container{
+    overflow: hidden; 
+}
+
+#divLogin{
+
+    text-align: center;
+    z-index: -1;
+    padding-top: 15em;
+}
+
+
+/* navbar */
+
+
+#logo {
+    width: 25vh;
+    display: flex;
+    
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+   
+}
+
+nav{
+
+    background-color: white;
+    display: flex;
+    align-items: center;
+    font-size: 2vh;
+    background-color: #183800;
+    width: 100%;
+    
+}
+
+a:hover{
+    color:rgb(176, 172, 172)
+}
+
+ul{
+    list-style: none;
+    padding-top: 1em; /*alterar para mudar a largura da nav */
+    padding-bottom: 1em; /*alterar para mudar a largura da nav */
+}
+
+.liNav, li{
+    padding-top: 2.5em; /*alterar para mudar o posicionamento dos links na nav */
+    padding-left: 5em;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.sidebar{
+    display: none;
+}
+
+#imgAbrir{
+    display: none;
+    color: white;
+}    
+/* Nav Responsiva */
+
+@media screen and (max-width: 500px){
+
+    .menu{
+        display: none;
+    }
+    
+    #logo {
+        width: 25vh;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;     
+        
+    }
+    
+    .sidebar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 25%;
+        z-index: 999;
+        background-color: #183800;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        color: black;
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+
+        
+    }
+    
+    .sidebar li{
+        width: 100%;
+        margin: 0;
+    }
+
+    .sidebar a{
+        width: 100%;
+    }
+
+    .sidebar li:hover{
+        background-color: #112700;     
+        
+    }
+
+    #imgAbrir{
+        display: flex;
+        color: white;
+        background-color: #183800;
+        border: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        padding:2rem;
+        z-index: 999;
+        
+
+        
+    }    
+
+    #imgFechar{
+        display: none;
+        left: 0;
+        color: white;
+        background-color: #183800;
+        border: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 2rem;
+
+    }
+
+    #imgFechar:hover{
+ 
+        background-color: #112700;
+    }
+
+    .material-symbols-outlined{
+        display: flex;
+        justify-content: flex-end;
+
+    }
+
+    /* Vantagens */
+
+    .imgVantagens{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* carrossel */
+
+/* .carousel-inner{
+    height: 50em;
+    width: 100%;
+} */
+
+/* cards (about) */
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #a09d9d;
+    padding: 3em;
+}
+
+#sobre{
+    font-size: 0.8em;
+    color:#606060;
+    border: 0.1em solid #e8e8e8;
+    padding: 0.6em 1.2em;
+    border-radius: 1.5em;
+    margin-bottom: 1.2em;
+    background-color: white;
+}
+
+#h2Sobre{
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+
+.btnCard{
+    background-color: #183800;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    display: flex;
+    justify-content: center;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #a09d9d;
+   
+}
+
+.card{
+    border: 0.1em solid #e8e8e8;
+    padding: 0.6em 1.2em;
+    border-radius: 1em;
+    margin-bottom: 1.2em;
+    background-color: white;
+}
+
+/* Vantagens */
+
+.vantagens{
+    padding: 0 2em;
+    padding-top: 2em;
+    background-color: white;
+    background-color: gray;
+    border-radius: 1.5em;
+    font-size: 1em;
+    margin: 1.5em 1em ;
+    
+}
+
+.allVantagens{
+    padding: 2em;
+    
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.item{
+    border: 1px solid black;
+    border-radius: 1.5em;
+    padding: 1.4em 1.8em;
+    width: 24%;
+    height: 17em;
+}
+
+
+.imgVantagens{
+    width: 5.5rem;
+    height: 4.5rem;
+    border: 1px solid rgb(99, 98, 98);
+    border-radius: 1em;
+    padding: 0.3em;
+    background-color: #777676;
+}
+
+.titleProjects{
+    margin-top: 0.2rem;
+}
+
+.pVantagens{
+    color: rgb(26, 25, 25);
+    line-height: 1.6rem; /*para diminuir o espçamento entre as linhas */
+}
+
+/* .h2Vantagens, .info{
+    color: white;
+} */
+
+/* footer */
+
+.footer{
+    background-color: rgb(41, 40, 40);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.logoFooter {
+    width: 25vh;
+    display: flex;  
+}
+
+.txtFooter{
+    color: white;
+}
+
+.divFooter{
+    display: flex;
+}
+
+/* Informações Pulveasy */
+
+.divInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #183800;
+    margin-top: 2em;
+  }
+  
+  .imgInfo {
+    border-radius: 2em;
+    border: 2px solid black;
+    margin: 2em;
+    margin-right: 5em ;
+  }
+  
+  .txtInfo {
+    flex: 1;
+    color: white;
+    padding: 1em;
+  }
+  
+  
+  /*  Cadastro de Propriedade */
+
+.cadastroPropriedade{
+    background-color: white;
+
+}
+
+
+.imgPropriedade{
+    width: 50vh;
+    padding-top: 4em;
+    
+}
+
+.headerPropriedade{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+    color: #606060;
+}
+
+/* .container {
+    background-color: green;
+} */
+
+.col{
+    background-color: #183800;
+}
+
+.linkVoltar{
+
+color: black;
+}
+
+/* Histórico de Pulverizaçãoes */
+
+#ulHistorico{
+    padding: 0;
+    border: 0.1rem solid black;
+    margin: 0.5rem 0.2rem 0 0.2rem;
+}
+
+.liHistorico{
+
+    padding-top: 0.1rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: black;
+    justify-content: space-between;
+    
+
+}
+
+#btnMais{
+    color: white;
+    background-color: greenyellow;
+    border-radius: 100%;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 4em;
+    z-index: 999;
+ 
+}
+
+#imgListHistorico{
+    background-color:gray;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5em;
+    position: fixed;
+    margin: 0.5rem 0 0 0.5rem;
+    
+}
+
+.linkExcluir{
+    background-color: red;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    margin: -5rem 1rem 0 0.5rem;
+    display: inline-block;
+}
+
+.linkEditar{
+    background-color: blue;
+    border-radius: 0.5rem;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    margin: -5rem 0 0 0;
+    
+}
+
+li.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
