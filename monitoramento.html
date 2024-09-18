@@ -3,10 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <link rel="stylesheet" href="style.css">
     <title>Monitoramento</title>
 </head>
 <body>
-    <h1>Monitoramento</h1>
+
+    <nav>
+        <div id="logo">
+          <a href="index.html"> <img id="logo" src="imagens/nav4.png"></a>
+        </div>
+    
+          
+    
+          <ul class="menu">
+              <li class="liNav"><a href="home.html">Home</a></li>
+              <li class="liNav"><a href="pulverizacao.html">Pulverização</a></li>
+              <li class="liNav"><a href="monitoramento.html">Monitoramento</a></li>
+              <li class="liNav"><a href="sobre.html">Sobre</a></li>
+              <li class="liNav"><a href="login.php">Entrar</a></li>
+              <!-- <li id="imgLog"><a href="login.html"><img id="imgLog" src="imagens/icons8-pessoa-24.png"></a></li>                -->
+          </ul>
+    
+          <button id="imgAbrir" onclick="abrirMenu()"><span class="material-symbols-outlined">
+            menu
+            </span></button>
+    
+          <ul class="sidebar">
+            <li><button id="imgFechar" onclick="fecharMenu()"><span class="material-symbols-outlined">
+              close</button></li>
+            <li class="liNav"><a href="home.html">Home</a></li>
+            <li class="liNav"><a href="pulverizacao.html">Pulverização</a></li>
+            <li class="liNav"><a href="monitoramento.html">Monitoramento</a></li>
+            <li class="liNav"><a href="sobre.html">Sobre</a></li>
+            <li class="liNav"><a href="login.php">Entar</a></li>
+            
+            <!-- <div id="imgAbrir" onclick="abrirMenu()" ><img  src="imagens/openMenu.svg" alt=""></div> -->
+            <!-- <li id="imgLog"><a href="login.html"><img id="imgLog" src="imagens/icons8-pessoa-24.png"></a></li>                -->
+        </ul>
+            
+      </nav>
+
+      <section>
+        <div class="cardsMonitoramento">
+            <div class="itemMoni" id="local">
+                <span class="material-symbols-outlined">
+                    location_on
+                </span>
+            </div>
+    
+            <div class="itemMoni" id="chuva">
+                <span class="material-symbols-outlined">
+                    rainy
+                </span>
+            </div>
+    
+            <div class="itemMoni" id="umidade">
+                <span class="material-symbols-outlined">
+                    water_drop
+                </span>
+            </div>
+    
+            <div class="itemMoni" id="velocidade">
+                <span class="material-symbols-outlined">
+                    speed
+                </span>
+            </div>
+    
+            <div class="itemMoni" id="temperatura">
+                <span class="material-symbols-outlined">
+                    device_thermostat
+                </span>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    
+
+
+        <!-- Umidade (pesquisar Rain) -->
+ 
+
+        <!-- Velocidade(Pesquisar Speed) -->
+
+                
+        <!-- Temperatura -->
+   
+          
+
+        <!-- Localização -->
+
+
+        
+
+
     
 </body>
 </html>
