@@ -35,7 +35,7 @@
           <li class="liNav"><a href="pulverizacao.html">Pulverização</a></li>
           <li class="liNav"><a href="monitoramento.html">Monitoramento</a></li>
           <li class="liNav"><a href="sobre.html">Sobre</a></li>
-          <li class="liNav"><a href="login.php">Entar</a></li>
+          <li class="liNav"><a href="login.php">Entrar</a></li>
           <!-- <li id="imgLog"><a href="login.html"><img id="imgLog" src="imagens/icons8-pessoa-24.png"></a></li>                -->
       </ul>
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'conexao.php';
 
 $cidade = filter_input(INPUT_POST, 'cidade');
@@ -24,6 +25,9 @@ if ($nomePropriedade && $numero) {
         $sql->bindValue(':inscest', $inscest);
         $sql->bindValue(':nomePropriedade', $nomePropriedade);
         $sql->execute();
+
+        $_SESSION['inscest'] = $inscest;
+        $_SESSION['nomePropriedade'] = $nomePropriedade     ;
 
 
         header('Location: historicoPulv.php'); //corrigir essa linha (estava antes Location: index.php)

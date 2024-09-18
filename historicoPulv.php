@@ -32,7 +32,7 @@
           <li class="liNav"><a href="pulverizacao.html">Pulverização</a></li>
           <li class="liNav"><a href="monitoramento.html">Monitoramento</a></li>
           <li class="liNav"><a href="sobre.html">Sobre</a></li>
-          <li class="liNav"><a href="login.php">Entar</a></li>
+          <li class="liNav"><a href="login.php">Entrar</a></li>
           <!-- <li id="imgLog"><a href="login.html"><img id="imgLog" src="imagens/icons8-pessoa-24.png"></a></li>                -->
       </ul>
 
@@ -47,7 +47,7 @@
         <li class="liNav"><a href="pulverizacao.html">Pulverização</a></li>
         <li class="liNav"><a href="monitoramento.html">Monitoramento</a></li>
         <li class="liNav"><a href="sobre.html">Sobre</a></li>
-        <li class="liNav"><a href="login.php">Entar</a></li>
+        <li class="liNav"><a href="login.php">Entrar</a></li>
         
         <!-- <div id="imgAbrir" onclick="abrirMenu()" ><img  src="imagens/openMenu.svg" alt=""></div> -->
         <!-- <li id="imgLog"><a href="login.html"><img id="imgLog" src="imagens/icons8-pessoa-24.png"></a></li>                -->
@@ -64,10 +64,12 @@
 
                 <div>
                     <ul>
-                        <li class="liHistorico">Nome:</li>
+                        <li class="liHistorico"><h4>Nome:</h4></li>
                         <li class="liHistorico">Local:</li>
+                        <li class="liHistorico"></li>
+                     
                         <li class="buttonContainer"> <a class="linkEditar" class="liHistorico" href="editar.php?id=<?= $dado['id']; ?>">Editar</a> 
-                        <a class="linkExcluir" href="excluir.php?id=<?= $dado['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+                        <a class="linkExcluir" href="excluirHistorico.php?id=<?= $dado['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                         </li>
                     </ul>
                 </div>
