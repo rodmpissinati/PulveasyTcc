@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="umidade.css">
+    <title>Monitoramento</title>
+</head>
+<body>
+    <div id="webcrumbs"> 
+        <div class="header">
+            <h2>Localização</h2>
+            <img src="https://tools-api.webcrumbs.org/image-placeholder/800/200/map" alt="Mapa de localização"/>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <h3>Velocidade</h3>
+                <div id="velocimetro">
+                    <div id="velocidade">0</div>
+                    <div class="unit">Km/h</div>
+                </div> 
+            </div>
+
+            <div class="card">
+                <h3>Umidade</h3>
+                <div class="container">
+                    <svg class="circular-chart" viewBox="0 0 100 100">
+                        <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="circle" cx="50" cy="50" r="45"></circle>
+                        <text class="percentage" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">0%</text>
+                    </svg>
+                    <input type="number" id="progressInput" placeholder="Digite um valor (0-100)" />
+                    <button id="updateButton">Atualizar Progresso</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperatura</h3>
+                <div id="weather-icon">
+                    <img id="icon" src="" alt="Ícone do tempo" />
+                </div>
+                
+                <p class="temperature-value">27°C</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
