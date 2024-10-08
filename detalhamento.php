@@ -57,42 +57,30 @@ if ($sql->rowCount() > 0) {
         <form id="formDetalhamento" method="post" action="processaDetalhamento.php">
             <table class="table">
                 <thead>
-
-                
-    
-
-
-                <tr>
-                <?php foreach ($dados as $dado): ?>
-                     <h4>Nome:<?= $dado['fk_propriedade_nome']; ?>
-                     <input type="hidden" name="fk_propriedade_nome" value="<?= $_SESSION['nomePropriedade']; ?>">
-                    </h4>
-
-                     <h5 id="inscest"> Inscrição Estadual:<?= $dado['fk_propriedade_inscest']; ?>
-                     <input type="hidden" name="fk_propriedade_inscest" value="<?= $_SESSION['inscest']; ?>">    
-                    
-                    </h5>
-
-                    <h5 class="tdDetalhamento" id="nomeOperador">
-                     <span class="texto">Nome do Operador:<?= $dado['nomeOperador']; ?></span>    
-                     <input class="input" type="text" name="nomeOperador" id="i9" placeholder="Nome do Operador" value="<?= $dado['nomeOperador']; ?>">
-            
-                    </h5>
-                
-                     <h5 class="tdDetalhamento" id="numEquipamento">
-                     <span class="texto">Numero do Equipamento:<?= $dado['numeroEquipamento']; ?></span>    
-                     <input class="input" type="text" name="numeroEquipamento" id="i10" placeholder="Numero do Equipamento"  value="<?= $dado['numeroEquipamento']; ?>">
-                    
-                    </h5>
-                     
-
-                    <?php endforeach; ?>
-
+                    <!-- Exibe o cabeçalho apenas uma vez -->
+                    <?php if (!empty($dados)): ?>
+                    <tr>
+                        <h4>Nome: <?= $dados[0]['fk_propriedade_nome']; ?>
+                            <input type="hidden" name="fk_propriedade_nome" value="<?= $_SESSION['nomePropriedade']; ?>">
+                        </h4>
+                        <h5 id="inscest">Inscrição Estadual: <?= $dados[0]['fk_propriedade_inscest']; ?>
+                            <input type="hidden" name="fk_propriedade_inscest" value="<?= $_SESSION['inscest']; ?>">
+                        </h5>
+                        <h5 class="tdDetalhamento" id="nomeOperador">
+                            <span class="texto">Nome do Operador: <?= $dados[0]['nomeOperador']; ?></span>
+                            <input class="input" type="text" name="nomeOperador" id="i9" placeholder="Nome do Operador" value="<?= $dados[0]['nomeOperador']; ?>">
+                        </h5>
+                        <h5 class="tdDetalhamento" id="numEquipamento">
+                            <span class="texto">Número do Equipamento: <?= $dados[0]['numeroEquipamento']; ?></span>
+                            <input class="input" type="text" name="numeroEquipamento" id="i10" placeholder="Número do Equipamento" value="<?= $dados[0]['numeroEquipamento']; ?>">
+                        </h5>
+                    </tr>
+                    <?php endif; ?>
                     <tr>
                         <th scope="col">Código Produto</th>
                         <th scope="col">Nome Produto</th>
                         <th scope="col">Ativo</th>
-                        <th scope="col">tipo</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col">Carência</th>
                         <th scope="col">Dosagem</th>
                         <th scope="col">Data</th>
@@ -100,68 +88,47 @@ if ($sql->rowCount() > 0) {
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Laço para os detalhes dos produtos de pulverização -->
                     <?php foreach ($dados as $dado): ?>
                     <tr>
-                    <td class="tdDetalhamento" id="1">
-                        <span class="texto"><?= $dado['codigo']; ?></span>
-                        <input class="input" type="text" name="codigo" id="i1" value="<?= $dado['codigo']; ?>">
-                    </td>
-
-                    <td class="tdDetalhamento" id="2">
-                        <span class="texto"><?= $dado['nome']; ?></span>
-                        <input class="input" type="text" name="nome" id="i2" value="<?= $dado['nome']; ?>">
-                    </td>
-
-                    <td class="tdDetalhamento" id="3">
-                        <span class="texto"><?= $dado['ativo']; ?></span>
-                        <input class="input" type="text" name="ativo" id="i3" value="<?= $dado['ativo']; ?>">
-                    </td>
-
-                        
-                    <td class="tdDetalhamento" id="4">
-                        <span class="texto"><?= $dado['tipo']; ?></span>
-                        <input class="input" type="text" name="tipo" id="i4" value="<?= $dado['tipo']; ?>">
-                    </td>
-
-                    <td class="tdDetalhamento" id="5">
-                        <span class="texto"><?= $dado['carencia']; ?></span>
-                        <input class="input" type="text" name="carencia" id="i5" value="<?= $dado['carencia']; ?>">
-                    </td>
-
-                    <td class="tdDetalhamento" id="6">
-                        <span class="texto"><?= $dado['dosagem']; ?></span>
-                        <input class="input" type="text" name="dosagem" id="i6" value="<?= $dado['dosagem']; ?>">
-                    </td>
-                    <td class="tdDetalhamento" id="7">
-                        <span class="texto"><?= $dado['dataPulv']; ?></span>
-                        <input class="input" type="date" name="dataPulv" id="i7" value="<?=$dado['dataPulv']; ?>">
-                    </td>
-
-                    <td class="tdDetalhamento" id="8">
-                        <span class="texto"><?= $dado['hora']; ?></span>
-                        <input class="input" type="time" name="hora" id="i8" value="<?=$dado['hora']; ?>">
-                    </td>
-                        
-                    
-                    </td>
+                        <td class="tdDetalhamento" id="1">
+                            <span class="texto"><?= $dado['codigo']; ?></span>
+                            <input class="input" type="text" name="codigo" id="i1" value="<?= $dado['codigo']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="2">
+                            <span class="texto"><?= $dado['nome']; ?></span>
+                            <input class="input" type="text" name="nome" id="i2" value="<?= $dado['nome']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="3">
+                            <span class="texto"><?= $dado['ativo']; ?></span>
+                            <input class="input" type="text" name="ativo" id="i3" value="<?= $dado['ativo']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="4">
+                            <span class="texto"><?= $dado['tipo']; ?></span>
+                            <input class="input" type="text" name="tipo" id="i4" value="<?= $dado['tipo']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="5">
+                            <span class="texto"><?= $dado['carencia']; ?></span>
+                            <input class="input" type="text" name="carencia" id="i5" value="<?= $dado['carencia']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="6">
+                            <span class="texto"><?= $dado['dosagem']; ?></span>
+                            <input class="input" type="text" name="dosagem" id="i6" value="<?= $dado['dosagem']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="7">
+                            <span class="texto"><?= $dado['dataPulv']; ?></span>
+                            <input class="input" type="date" name="dataPulv" id="i7" value="<?= $dado['dataPulv']; ?>">
+                        </td>
+                        <td class="tdDetalhamento" id="8">
+                            <span class="texto"><?= $dado['hora']; ?></span>
+                            <input class="input" type="time" name="hora" id="i8" value="<?= $dado['hora']; ?>">
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-
             <button id="salvarAlteracoes" type="submit" class="btn btn-primary">Salvar Alterações</button>
-            <!-- <input type="text" id="idPropriedade" placeholder="ID da Propriedade">
-<button onclick="adicionarRegistro()">Adicionar Registro</button>
-<div id="resultado"></div> -->
-
-<a id="adicionarRegistro" class="btn btn-primary return false;">Adicionar</a>
-
-
-
-
-
-
-    
+            <a id="adicionarRegistro" class="btn btn-primary return false;">Adicionar</a>
         </form>
     </div>
     <script src="script.js"></script>

@@ -52,13 +52,14 @@ body{
       
 }
 
-#user, #password, #cpf, #email, #cidade, #bairro, #rua, #numero, #cnpj, #nomeP{
+#user, #password, #cpf, #email, #cidade, #bairro, #rua, #numero, #cnpj, #nomeP, #cidadePropri, #bairroPropri, #ruaPropri, #numeroPropri,    #select {
     padding: 0.7em 1em;
     padding-right: 9em;
     border: 0px solid gray;
-    border-radius: 0.8em;
+    border-radius: 0.5em;
     margin-top: 0.2em;
-    border: solid black 1px;
+    border: solid rgb(190, 190, 190) 1.8px;
+    background-color: #e9e8e8; /* altera a cor de fundo do input */
 }
 
 
@@ -79,18 +80,19 @@ body{
 }
 
 #btn_form {
-    padding: 0.5em 10em; /*deixar 9 ou 10 */
-    border: 0.5px solid black;
-    border-radius: 1em;
+    padding: 0.65em 10em; /*deixar 9 ou 10 */
+    border: 0px solid black;
+    border-radius: 0.5em;
     background-color: green;
     font-size: 1em;
     color: white;
-    font-weight: 700;
+    font-weight: 500;
 }
 
  .form_container input::placeholder { /*Para mudar dentro da caixa de texto */
-    color: gray; 
-    text-align: left; 
+    color: rgb(143, 141, 141); 
+    text-align: left;
+
   }
 #txt_login{
     display: flex;
@@ -112,7 +114,7 @@ body{
 } 
 
 #txt_cadastrar{
-    display: flex;
+    display: block;
     padding-top: 0.5em;
     margin: 0 0.5em;
 }
@@ -144,6 +146,30 @@ input:focus{
     padding-top: 15em;
 }
 
+#txt_entrar, #link_Cadastrar{
+    padding-top: 0.3rem;
+}
+
+.imgPulveasyForms{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    
+.imgPulveasyForms{
+    display: flex;
+    width: 40vh;
+    height: 18vh;
+    margin-bottom:5rem ;
+}
+
+#txt_esqueci{
+    margin-top: 0em;
+}
+
+}
+
 
 /* navbar */
 
@@ -151,107 +177,112 @@ input:focus{
 #logo {
     width: 25vh;
     display: flex;
-    
 }
 
-.menu{
+.menu {
     list-style: none;
     display: flex;
     align-items: center;
-    
-   
 }
 
-nav{
-
+nav {
     background-color: white;
     display: flex;
     align-items: center;
     font-size: 2vh;
     background-color: #183800;
     width: 100%;
-    
+    /* position: fixed;
+    z-index: 2; Para nav ficar fixa */
 }
 
-a:hover{
-    color:rgb(176, 172, 172)
+a:hover {
+    color: rgb(176, 172, 172);
 }
 
-ul{
+ul {
     list-style: none;
-    padding-top: 1em; /*alterar para mudar a largura da nav */
-    padding-bottom: 1em; /*alterar para mudar a largura da nav */
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
-.liNav, li{
-    padding-top: 2.5em; /*alterar para mudar o posicionamento dos links na nav */
+.liNav, li {
+    padding-top: 2.5em;
     padding-left: 5em;
 }
 
-a{
-    color:white;
+a {
+    color: white;
     text-decoration: none;
 }
 
-.sidebar{
+.sidebar {
     display: none;
 }
 
-#imgAbrir{
+#imgAbrir {
     display: none;
     color: white;
-}    
+}
+
+#pessoaLogin {
+    display: flex;
+    padding-left: 52rem;
+    /* position: fixed;
+    right: 0;
+    padding-right: 3.5rem; Alterar, pois a imagem está ficando fixa na tela */
+}
+
+#pessoaLogin .material-symbols-outlined {
+    font-size: 2rem;
+}
+
 /* Nav Responsiva */
-
-@media screen and (max-width: 500px){
-
-    .menu{
+@media screen and (max-width: 500px) {
+    .menu {
         display: none;
     }
-    
+
     #logo {
         width: 25vh;
         display: flex;
-        text-align: center;
+        align-items: center;
         justify-content: center;
-        flex-direction: column;     
-        
+        margin: 0 auto;
+        flex-direction: column;
     }
-    
-    .sidebar{
+
+    .sidebar {
         position: fixed;
         top: 0;
         right: 0;
         height: 100vh;
-        width: 25%;
+        width: 75%;
         z-index: 999;
         background-color: #183800;
         display: none;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        color: black;
+        color: white;
         backdrop-filter: blur(10px);
         box-shadow: -10px 0 10px rgba(0,0,0,0.1);
-
-        
     }
-    
-    .sidebar li{
+
+    .sidebar li {
         width: 100%;
         margin: 0;
     }
 
-    .sidebar a{
+    .sidebar a {
         width: 100%;
     }
 
-    .sidebar li:hover{
-        background-color: #112700;     
-        
+    .sidebar li:hover {
+        background-color: #112700;
     }
 
-    #imgAbrir{
+    #imgAbrir {
         display: flex;
         color: white;
         background-color: #183800;
@@ -260,38 +291,62 @@ a{
         justify-content: flex-end;
         position: absolute;
         right: 0;
-        padding:2rem;
+        padding: 2rem;
+        padding-top: 4.5rem;
         z-index: 999;
         
+    }
 
-        
-    }    
-
-    #imgFechar{
+    #imgFechar {
         display: none;
-        left: 0;
         color: white;
         background-color: #183800;
         border: none;
-        flex-direction: row;
-        justify-content: flex-end;
         position: absolute;
         right: 0;
         top: 0;
         padding: 2rem;
-
     }
 
-    #imgFechar:hover{
- 
+    #imgFechar:hover {
         background-color: #112700;
+
     }
 
-    .material-symbols-outlined{
+    .material-symbols-outlined {
         display: flex;
         justify-content: flex-end;
 
     }
+
+    .liNav, li {
+        padding: 0;
+        margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 1em 2em; /* Espaçamento interno consistente em volta do texto */
+    display: block; /* Faz com que o link ocupe toda a área dentro do li */
+    text-align: center;
+}
+
+li a:hover {
+    background-color: #112700; /* Cor ao passar o mouse */
+    color: white;
+}
+
+.sidebar a {
+    padding: 1em;
+    width: 100%;
+}
+
+#sideHome{
+    margin-top: 5rem;
+}
+
+}
 
     /* Vantagens */
 
@@ -305,20 +360,36 @@ a{
 
 
 
-}
-
-
-
-
-
-
-
 /* carrossel */
 
-/* .carousel-inner{
-    height: 50em;
+.carousel-inner {
+    /* height: auto; */
+    /* max-height: 40vh; */
+    height: 80vh;
+}
+
+.carousel-item img {
     width: 100%;
-} */
+    /* height: auto; */
+    height: 80vh;
+}
+
+@media screen and (max-width: 500px) {
+
+    .carousel-inner {
+        /* height: auto; */
+        /* max-height: 40vh; */
+        height: 20vh;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        /* height: auto; */
+        height: 20vh;
+    }
+
+}
+
 
 /* cards (about) */
 
@@ -329,6 +400,7 @@ a{
     flex-direction: column;
     background-color: #a09d9d;
     padding: 3em;
+    text-align: center;
 }
 
 #sobre{
@@ -361,6 +433,8 @@ a{
     justify-content: space-around;
     align-items: center;
     background-color: #a09d9d;
+    flex-wrap: wrap;
+    
    
 }
 
@@ -370,7 +444,37 @@ a{
     border-radius: 1em;
     margin-bottom: 1.2em;
     background-color: white;
+    width: 100%; /* Para ajustar o tamanho nas telas menores */
+    max-width: 18rem; /* Mantém a largura máxima de 18rem */
+    box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column; /* Muda o layout para uma coluna em telas menores */
+    }
+
+    .card {
+        width: 80%; /* Aumenta o tamanho das cards em telas menores */
+        margin: 1em auto; /* Centraliza os cards */
+    }
+}
+
+@media (max-width: 480px) {
+    #h2Sobre {
+        font-size: 1.2em;
+    }
+
+    #sobre {
+        font-size: 0.7em;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+
+    }
 
 /* Vantagens */
 
@@ -394,6 +498,7 @@ a{
     display: flex;
     align-items: center;
     gap: 2em;
+    justify-content: space-around;
 }
 
 .item{
@@ -402,30 +507,116 @@ a{
     padding: 1.4em 1.8em;
     width: 24%;
     height: 17em;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 
 .imgVantagens{
-    width: 5.5rem;
-    height: 4.5rem;
+    width: 4rem;
+    height: 4rem;
     border: 1px solid rgb(99, 98, 98);
     border-radius: 1em;
     padding: 0.3em;
     background-color: #777676;
+
 }
 
 .titleProjects{
     margin-top: 0.2rem;
+    padding-top:1.5rem ;
 }
 
 .pVantagens{
     color: rgb(26, 25, 25);
     line-height: 1.6rem; /*para diminuir o espçamento entre as linhas */
+    padding-top: 2rem;
+}
+
+#tSustenta{
+    margin-left: 4rem;
+}
+
+#pSustenta{
+    padding-top: 2rem;
+}
+
+#tGestao{
+    margin-left: -2rem;
+    
+}
+
+#pGestao{
+  padding-top: 2rem;  
+}
+
+@media screen and (min-width: 768px) {
+    .items {
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+
+    .item {
+        width: 45%; /* Para caber dois itens por linha em tablets */
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .item {
+        width: 24%; /* Para caber quatro itens por linha em telas grandes */
+
+    }
+
+
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media screen and (max-width: 767px) {
+    .item {
+        width: 100%; /* Ocupa toda a largura da tela em celulares */
+        margin-bottom: 1.5em; /* Adiciona espaçamento entre os itens */
+
+    }
+
+    
+    .items {
+        flex-wrap: wrap;  /* Permite os itens quebrarem linha em telas menores */
+    }
+
+    .imgVantagens{
+        width: 4rem;
+        height: 3rem;
+        padding: 0;
+    
+    }
+
 }
 
 /* .h2Vantagens, .info{
     color: white;
 } */
+
+
+/* Sobre Nós */
+
+.sobreNos {
+    background-color: #183800;
+    color: white; 
+    padding: 20px; 
+}
+
+.h2SobreNos {
+    font-size: 2rem; /* Tamanho do título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+.pSobreNos {
+    font-size: 18px; /* Tamanho do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo de cada parágrafo */
+}
+
 
 /* footer */
 
@@ -435,6 +626,8 @@ a{
     margin: 0;
     width: 100%;
     height: 100%;
+    margin-top: 0.25rem;
+
 }
 
 .logoFooter {
@@ -448,6 +641,17 @@ a{
 
 .divFooter{
     display: flex;
+}
+
+#logoInsta{
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+}
+
+#instagram{
+    color: white;
 }
 
 /* Informações Pulveasy */
@@ -477,7 +681,8 @@ a{
   /*  Cadastro de Propriedade */
 
 .cadastroPropriedade{
-    background-color: white;
+    background-color: #183800;
+    color: white;
 
 }
 
@@ -493,7 +698,11 @@ a{
     justify-content: center;
     align-items: center;
     padding-bottom: 2em;
-    color: #606060;
+    color: white;
+}
+
+input{
+    background-color: #777676;
 }
 
 /* .container {
@@ -581,8 +790,11 @@ li.buttonContainer {
 
 /* Detalhamento */
 
-input {
+.input {
     display: none;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.2rem;
 }
 
 .tdDetalhamento {

@@ -1,3 +1,19 @@
+function abrirMenu() {
+    let sidebar = document.getElementsByClassName("sidebar")[0]; // Pega o primeiro elemento da classe
+    let imgFechar = document.getElementById("imgFechar");
+    sidebar.style.display = "flex";
+    imgFechar.style.display = "flex";
+}
+
+function fecharMenu() {
+    let sidebar = document.getElementsByClassName("sidebar")[0];
+    let imgFechar = document.getElementById("imgFechar");
+    sidebar.style.display = "none";
+    imgFechar.style.display = "none";
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const tds = document.querySelectorAll('.tdDetalhamento');
 
@@ -90,6 +106,5 @@ function adicionarRegistro() {
         alert('Erro ao adicionar registro!');
     });
 }
-
 
 

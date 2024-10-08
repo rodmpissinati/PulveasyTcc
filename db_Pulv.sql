@@ -21,14 +21,14 @@ CREATE TABLE tb_propriedade (
 );
 
 
-CREATE TABLE tb_produto (
-    codigo VARCHAR(40),
-    nome VARCHAR(40),
-    ativo VARCHAR(40),
-    tipo VARCHAR(40),
-    carencia VARCHAR(10),
-     PRIMARY KEY (codigo, nome, ativo, carencia)
-);
+-- CREATE TABLE tb_produto (
+   --  codigo VARCHAR(40),
+   --  nome VARCHAR(40),
+   --  ativo VARCHAR(40),
+   --  tipo VARCHAR(40),
+   --  carencia VARCHAR(10),
+    --  PRIMARY KEY (codigo, nome, ativo, carencia)
+-- );
 
 -- CREATE TABLE tb_possui (
 -- fk_propriedade_incest VARCHAR(14),
@@ -39,15 +39,16 @@ CREATE TABLE tb_pulverizacao(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	fk_propriedade_inscest VARCHAR(25),
 	fk_propriedade_nome VARCHAR(40),
-    fk_produto_codigo VARCHAR (40), -- 04/09
-    fk_produto_nome VARCHAR(40),
-    fk_produto_ativo VARCHAR(40),
-    fk_produto_carencia VARCHAR(10),
-    dosagem VARCHAR(40),
-	dataPulv VARCHAR(10),
-    hora time,
     nomeOperador VARCHAR(40),
-    numeroEquipamento INT
+    numeroEquipamento VARCHAR(20),
+    codigo VARCHAR(40),
+    nome VARCHAR(40),
+    ativo VARCHAR(40),
+    tipo VARCHAR(40),
+    carencia VARCHAR(10),
+    dosagem VARCHAR(40),
+    dataPulv VARCHAR(10),
+    hora time
     
 );
 
@@ -67,20 +68,19 @@ ALTER TABLE tb_pulverizacao ADD CONSTRAINT fk_pulverizacao_1
     REFERENCES tb_propriedade (inscest, nomePropriedade )
     ON DELETE CASCADE;
     
-    ALTER TABLE tb_pulverizacao ADD CONSTRAINT fk_pulverizacao_2
-    FOREIGN KEY (fk_produto_codigo, fk_produto_nome, fk_produto_ativo, fk_produto_carencia)
-    REFERENCES tb_produto(codigo, nome, ativo, carencia)
-    ON DELETE SET NULL;
--- ---------------------------------------------------
+   -- ALTER TABLE tb_pulverizacao ADD CONSTRAINT fk_pulverizacao_2
+    -- FOREIGN KEY (fk_produto_codigo, fk_produto_nome, fk_produto_ativo, fk_produto_carencia)
+   -- REFERENCES tb_produto(codigo, nome, ativo, carencia)
+   -- ON DELETE SET NULL;
 
 ALTER TABLE tb_tempoReal ADD CONSTRAINT fk_tempoReal_1
     FOREIGN KEY (fk_pulverizacao_id)
     REFERENCES tb_pulverizacao (id)
     ON DELETE SET NULL;
     
-    -- select * from  tb_pulverizacao;
+  select * from  tb_pulverizacao;
     
- -- select * from  tb_propriedade;
+-- select * from  tb_propriedade;
     
  -- drop database db_pulveasy;
     

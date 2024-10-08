@@ -22,6 +22,8 @@
         <img id="imgLogin" src="pulveasy-13-07-2024\imagens\imagemLogin.jpg" alt="" srcset="">
             <form action="processaLogin.php" method="POST">
 
+            <img class="imgPulveasyForms" class="imgPropriedade" src="imagens\nav4.png" alt="">
+
                 <h1 id="txt_login">Login</h1>
                 <div class="form_container">
                     <h3>CNPJ</h3>

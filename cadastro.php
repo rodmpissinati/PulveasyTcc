@@ -8,11 +8,20 @@
 </head>
 <body>
     <div class="background">
+
+
+    <div id="divLogin">
+        <img src="imagens/logoLogin.png" >
     </div>
+    </div>
+        
 
     <div class="container">
         <div class="form">
             <form action="processaCadastro.php" method="POST">
+
+            <img class="imgPulveasyForms" class="imgPropriedade" src="imagens\nav4.png" alt="">
+
 
                 <h1 id="txt_login">Cadastro</h1>
                 <div class="form_container">
